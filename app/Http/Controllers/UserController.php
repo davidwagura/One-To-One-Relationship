@@ -35,4 +35,12 @@ class UserController extends Controller
         $mobile = User::find(1)->mobile;
         dd($mobile);
     }
+    public function update()
+    {
+        $user = User::find(1);
+    
+        $user->name = 'Test II';
+        $user->mobile->mobile = '987654321';
+        $user->push();
+    }
 }
