@@ -20,4 +20,19 @@ class UserController extends Controller
         $mobile->mobile = '123456789';
         $user->mobile()->save($mobile);
     }
+    public function index()
+    {
+        // get user and mobile data from User model
+        $user = User::find(1);
+        var_dump($user->name);
+        var_dump($user->mobile->mobile);
+    
+        // get user data from Mobile model
+        $user = Mobile::find(1)->user;
+        dd($user);
+    
+        // get mobile number from User model
+        $mobile = User::find(1)->mobile;
+        dd($mobile);
+    }
 }
