@@ -43,4 +43,9 @@ class UserController extends Controller
         $user->mobile->mobile = '987654321';
         $user->push();
     }
+    public function delete()
+    {
+        $user = User::find(1);
+        $user->delete();
+    }
 }
